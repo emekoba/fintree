@@ -1,4 +1,9 @@
+import 'package:fintree/widgets/ft_box.dart';
+import 'package:fintree/widgets/ft_button.dart';
+import 'package:fintree/widgets/ft_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
 
 class WelcomePage extends StatelessWidget {
   static String routeName = '/';
@@ -7,27 +12,42 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
+          const Positioned.fill(
             child: Image(
-              image: AssetImage('assets/images/welcome_backdrop.png'),
+              image: AssetImage('assets/welcome_backdrop.png'),
               fit: BoxFit.cover,
             ),
           ),
           Positioned.fill(
-            child: Center(
-              child: Text(
-                'Welcome',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
+            child: Column(
+              children: [
+                const Expanded(
+                  child: Box(),
                 ),
-              ),
+                Center(
+                  child: const FtText(
+                    'Be happy with your finance',
+                    size: 32,
+                    center: true,
+                  ).paddingSymmetric(horizontal: Get.width / 7),
+                ),
+                const Box(height: 40),
+                FtButton(
+                  onPressed: () {},
+                  label: 'Sign up',
+                ),
+                const Box(),
+                FtButton(
+                  onPressed: () {},
+                  label: 'Log in',
+                  bordered: true,
+                ),
+              ],
             ),
-          ),
+          ).paddingAll(30),
         ],
       ),
     );

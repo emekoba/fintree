@@ -11,13 +11,13 @@ class AppTheme {
     scaffoldBackgroundColor: const Color(0xffF8F5FF),
     iconTheme: const IconThemeData(color: Color(0xff6347EB), size: 26),
     textTheme: TextTheme(
-      labelLarge: GoogleFonts.redHatDisplay(color: Colors.white),
-      displayLarge: GoogleFonts.redHatDisplay(
+      labelLarge: GoogleFonts.inter(color: Colors.white),
+      displayLarge: GoogleFonts.inter(
         color: const Color(0xff3d3a43),
         fontSize: 16,
         fontWeight: FontWeight.w400,
       ),
-      displayMedium: GoogleFonts.redHatDisplay(
+      displayMedium: GoogleFonts.inter(
         color: Colors.black,
         fontSize: 28,
         fontWeight: FontWeight.w800,
@@ -60,7 +60,7 @@ class AppTheme {
           color: Color(0xffc6c6c6),
         ),
       ),
-      hintStyle: GoogleFonts.redHatDisplay(color: const Color(0xffc6c6c6)),
+      hintStyle: GoogleFonts.inter(color: const Color(0xffc6c6c6)),
       contentPadding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),

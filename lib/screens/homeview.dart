@@ -1,5 +1,5 @@
-import 'package:fintree/screens/expenses.screen.dart';
-import 'package:fintree/screens/offers.screen.dart';
+import 'package:fintree/screens/bill.screen.dart';
+import 'package:fintree/screens/orders.screen.dart';
 import 'package:fintree/screens/overview.screen.dart';
 import 'package:fintree/screens/settings.screen.dart';
 import 'package:fintree/static.dart';
@@ -17,9 +17,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final PageController _pageController = PageController(initialPage: 1);
-  bool verified = false;
-  int pageIndex = 1;
+  final PageController _pageController = PageController(initialPage: 0);
+  int pageIndex = 0;
 
   void changePage(int index) {
     _pageController.jumpToPage(index);
@@ -55,9 +54,9 @@ class _HomeViewState extends State<HomeView> {
       body: PageView(
         controller: _pageController,
         children: const [
+          OrdersScreen(),
+          BillScreen(),
           OverviewScreen(),
-          ExpensesScreen(),
-          OffersScreen(),
           SettingsScreen(),
         ],
       ),

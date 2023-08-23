@@ -1,4 +1,5 @@
 import 'package:fintree/screens/homeview.dart';
+import 'package:fintree/screens/overview.screen.dart';
 import 'package:fintree/screens/welcome.screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         WelcomeScreen.routeName: (ctx) => const WelcomeScreen(),
         HomeView.routeName: (ctx) => const HomeView(),
+        OverviewScreen.routeName: (ctx) => const OverviewScreen(),
       },
     );
   }

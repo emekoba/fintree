@@ -74,13 +74,12 @@ class FtScaffold extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Offstage(
-                                offstage: (showHeaderActionButton == null) ||
-                                    (showHeaderActionButton == false),
-                                child: const Icon(
-                                  Icons.add,
-                                  color: Colors.black,
-                                ),
+                              Icon(
+                                Icons.add,
+                                color: (showHeaderActionButton == null) ||
+                                        (showHeaderActionButton == false)
+                                    ? Colors.white
+                                    : Colors.black,
                               ),
                             ],
                           ),

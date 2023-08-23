@@ -1,5 +1,5 @@
-import 'package:fintree/screens/expenses.screen.dart';
-import 'package:fintree/screens/offers.screen.dart';
+import 'package:fintree/screens/bill.screen.dart';
+import 'package:fintree/screens/orders.screen.dart';
 import 'package:fintree/screens/overview.screen.dart';
 import 'package:fintree/screens/settings.screen.dart';
 import 'package:fintree/static.dart';
@@ -17,47 +17,44 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final PageController _pageController = PageController(initialPage: 1);
-  bool verified = false;
-  int pageIndex = 1;
+  final PageController _pageController = PageController(initialPage: 0);
+  int pageIndex = 0;
 
   void changePage(int index) {
     _pageController.jumpToPage(index);
     setState(() => pageIndex = index);
   }
 
-  BottomNavigationBarItem bnbItem({
-    required int idx,
-    required String label,
-  }) {
-    return BottomNavigationBarItem(
-      icon: FtImage.icon(
-        idx == 0
-            ? bnb1
-            : idx == 1
-                ? bnb2
-                : idx == 2
-                    ? bnb3
-                    : bnb4,
-        color: idx == pageIndex
-            ? Theme.of(context).primaryColor
-            : Theme.of(context).disabledColor,
-        height: 24,
-        width: 24,
-      ),
-      label: label,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    BottomNavigationBarItem bnbItem({
+      required int idx,
+      required String label,
+    }) {
+      return BottomNavigationBarItem(
+        icon: FtImage.icon(
+          idx == 0
+              ? bnb1
+              : idx == 1
+                  ? bnb2
+                  : idx == 2
+                      ? bnb3
+                      : bnb4,
+          color: idx == pageIndex
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).disabledColor,
+        ),
+        label: label,
+      );
+    }
+
     return FtScaffold(
       body: PageView(
         controller: _pageController,
         children: const [
           OverviewScreen(),
-          ExpensesScreen(),
-          OffersScreen(),
+          BillScreen(),
+          OrdersScreen(),
           SettingsScreen(),
         ],
       ),
@@ -83,9 +80,6 @@ class _HomeViewState extends State<HomeView> {
         currentIndex: pageIndex,
         selectedItemColor: Theme.of(context).primaryColor,
         onTap: changePage,
-        iconSize: 28,
-        // selectedFontSize: 12,
-        // unselectedFontSize: 12,
       ),
     );
   }

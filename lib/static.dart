@@ -10,3 +10,9 @@ String bnb4 = "assets/homeview/setting.svg";
 //* EXPENSES
 String carIcon = "assets/expenses/car.png";
 String receiptIcon = "assets/expenses/receipt.png";
+
+//* EXPENSES
+String appleIcon = "assets/bill/Apple.png";
+String netflixIcon = "assets/bill/Netflix.png";
+String patreonIcon = "assets/bill/Patreon.png";
+String spotifyIcon = "assets/bill/Spotify.png";

@@ -1,3 +1,4 @@
+import 'package:fintree/screens/homeview.dart';
 import 'package:fintree/static.dart';
 import 'package:fintree/widgets/ft_box.dart';
 import 'package:fintree/widgets/ft_button.dart';
@@ -57,12 +58,16 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 const Box(height: 40),
                 FtButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(HomeView.routeName);
+                  },
                   label: 'Sign up',
                 ),
                 const Box(),
                 FtButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(HomeView.routeName);
+                  },
                   label: 'Log in',
                   bordered: true,
                 ),

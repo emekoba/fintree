@@ -1,6 +1,8 @@
 import 'package:fintree/screens/homeview.dart';
+import 'package:fintree/screens/overview.screen.dart';
 import 'package:fintree/screens/welcome.screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'global.dart';
 
@@ -13,14 +15,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Fintree',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
-      initialRoute: "/homeview",
+      initialRoute: "/",
       routes: {
         WelcomeScreen.routeName: (ctx) => const WelcomeScreen(),
         HomeView.routeName: (ctx) => const HomeView(),
+        OverviewScreen.routeName: (ctx) => const OverviewScreen(),
       },
     );
   }

@@ -1,6 +1,3 @@
-import 'package:fintree/widgets/ft_box.dart';
-import 'package:fintree/widgets/ft_progress.dart';
-import 'package:fintree/widgets/ft_text.dart';
 import 'package:flutter/material.dart';
 
 class FtCard extends StatelessWidget {
@@ -47,69 +44,6 @@ class FtCard extends StatelessWidget {
         ],
       ),
       child: child,
-    );
-  }
-}
-
-class CardRow extends StatelessWidget {
-  final String title;
-  final double total;
-  final double left;
-  final double progress;
-  final Color? progressColor;
-
-  const CardRow({
-    super.key,
-    required this.title,
-    required this.total,
-    required this.left,
-    required this.progress,
-    this.progressColor = const Color(0xff6c63ff),
-    r,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              FtText(
-                title,
-                size: 16,
-                weight: FontWeight.w700,
-              ),
-              FtText(
-                "\$${total.toStringAsFixed(0)}",
-                size: 16,
-                weight: FontWeight.w700,
-              ),
-            ],
-          ),
-          const Box(height: 15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: FtProgress(
-                  max: 100,
-                  current: progress,
-                  color: progressColor!,
-                ),
-              ),
-              const Box(width: 20),
-              FtText(
-                "Left \$${left.toStringAsFixed(0)}",
-                size: 12,
-                weight: FontWeight.w400,
-                color: const Color(0xff908ba6),
-              ),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }

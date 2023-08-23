@@ -41,7 +41,7 @@ class FtText extends StatelessWidget {
       text,
       style: GoogleFonts.inter(
         fontWeight: weight ?? FontWeight.normal,
-        color: color ?? Colors.white,
+        color: color ?? Colors.black,
         fontSize: size,
       ).merge(style),
       strutStyle: strutStyle,

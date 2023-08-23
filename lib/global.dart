@@ -9,9 +9,10 @@ class AppTheme {
 
   static final ThemeData light = ThemeData(
     scaffoldBackgroundColor: const Color(0xffF8F5FF),
+    primaryColor: const Color(0xff6347EB),
     iconTheme: const IconThemeData(color: Color(0xff6347EB), size: 26),
     textTheme: TextTheme(
-      labelLarge: GoogleFonts.inter(color: Colors.white),
+      labelLarge: GoogleFonts.inter(color: Colors.black),
       displayLarge: GoogleFonts.inter(
         color: const Color(0xff3d3a43),
         fontSize: 16,
@@ -71,6 +72,14 @@ class AppTheme {
       ),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: Color(0xff6347EB),
+      unselectedItemColor: Color(0xffc6c6c6),
+      showUnselectedLabels: true,
+      showSelectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+    ),
   );
 }
 

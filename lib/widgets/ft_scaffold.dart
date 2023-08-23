@@ -1,7 +1,6 @@
 import 'package:fintree/widgets/dismiss_keyboard.dart';
 import 'package:fintree/widgets/ft_text.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class FtScaffold extends StatelessWidget {
@@ -13,7 +12,7 @@ class FtScaffold extends StatelessWidget {
   final Color? backgroundColor;
   final Color? headerColor;
   final Function? onBackButtonPress;
-  final bool? showHeaderCloseButton;
+  final bool? showHeaderActionButton;
   final Function? onHeaderCloseButtonPress;
   final Widget? bottomNavigationBar;
   final EdgeInsetsGeometry? padding;
@@ -31,7 +30,7 @@ class FtScaffold extends StatelessWidget {
     this.onBackButtonPress,
     this.headerColor,
     this.appBar,
-    this.showHeaderCloseButton,
+    this.showHeaderActionButton,
     this.onHeaderCloseButtonPress,
     this.headerHeight,
   });
@@ -39,7 +38,7 @@ class FtScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? Colors.white,
       appBar: appBar,
       body: SafeArea(
         child: DismissKeyboard(
@@ -47,8 +46,8 @@ class FtScaffold extends StatelessWidget {
             children: [
               showHeader == true
                   ? Container(
-                      height: headerHeight ?? 120,
-                      padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                      height: headerHeight ?? 90,
+                      padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                       width: Get.width,
                       color: headerColor ?? Colors.transparent,
                       child: Column(
@@ -58,25 +57,29 @@ class FtScaffold extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                children: [
-                                  showBackButton == true
-                                      ? const Icon(FontAwesomeIcons.arrowLeft)
-                                      : const SizedBox(),
-                                  SizedBox(
-                                      width: showBackButton == true ? 20 : 0),
-                                  FtText(
+                              showBackButton == true
+                                  ? const Icon(
+                                      Icons.arrow_back_ios,
+                                      color: Colors.black,
+                                      size: 20,
+                                    )
+                                  : const SizedBox(),
+                              Expanded(
+                                child: Center(
+                                  child: FtText(
                                     headerTitle ?? "",
                                     weight: FontWeight.w700,
                                     size: 18,
+                                    color: Colors.black,
                                   ),
-                                ],
+                                ),
                               ),
                               Offstage(
-                                offstage: (showHeaderCloseButton == null) ||
-                                    (showHeaderCloseButton == false),
+                                offstage: (showHeaderActionButton == null) ||
+                                    (showHeaderActionButton == false),
                                 child: const Icon(
-                                  FontAwesomeIcons.xmark,
+                                  Icons.add,
+                                  color: Colors.black,
                                 ),
                               ),
                             ],
@@ -87,7 +90,7 @@ class FtScaffold extends StatelessWidget {
                   : const SizedBox(),
               Expanded(
                 child: Padding(
-                  padding: padding ?? const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  padding: padding ?? const EdgeInsets.fromLTRB(15, 0, 15, 0),
                   child: body,
                 ),
               ),

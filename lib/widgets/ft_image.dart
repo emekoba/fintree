@@ -57,8 +57,8 @@ class _FtImageState extends State<FtImage> {
 
     switch (widget.preset) {
       case FtImagePresets.icon:
-        widget.height = 10;
-        widget.height = 10;
+        widget.height = 24;
+        widget.height = 24;
         break;
       default:
     }

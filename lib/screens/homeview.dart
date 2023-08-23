@@ -25,38 +25,36 @@ class _HomeViewState extends State<HomeView> {
     setState(() => pageIndex = index);
   }
 
-  BottomNavigationBarItem bnbItem({
-    required int idx,
-    required String label,
-  }) {
-    return BottomNavigationBarItem(
-      icon: FtImage.icon(
-        idx == 0
-            ? bnb1
-            : idx == 1
-                ? bnb2
-                : idx == 2
-                    ? bnb3
-                    : bnb4,
-        color: idx == pageIndex
-            ? Theme.of(context).primaryColor
-            : Theme.of(context).disabledColor,
-        height: 24,
-        width: 24,
-      ),
-      label: label,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    BottomNavigationBarItem bnbItem({
+      required int idx,
+      required String label,
+    }) {
+      return BottomNavigationBarItem(
+        icon: FtImage.icon(
+          idx == 0
+              ? bnb1
+              : idx == 1
+                  ? bnb2
+                  : idx == 2
+                      ? bnb3
+                      : bnb4,
+          color: idx == pageIndex
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).disabledColor,
+        ),
+        label: label,
+      );
+    }
+
     return FtScaffold(
       body: PageView(
         controller: _pageController,
         children: const [
-          OrdersScreen(),
-          BillScreen(),
           OverviewScreen(),
+          BillScreen(),
+          OrdersScreen(),
           SettingsScreen(),
         ],
       ),
@@ -82,9 +80,6 @@ class _HomeViewState extends State<HomeView> {
         currentIndex: pageIndex,
         selectedItemColor: Theme.of(context).primaryColor,
         onTap: changePage,
-        iconSize: 28,
-        // selectedFontSize: 12,
-        // unselectedFontSize: 12,
       ),
     );
   }

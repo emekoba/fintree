@@ -93,6 +93,7 @@ class FtButton extends StatelessWidget {
                             label ?? "",
                             size: textSize ?? 16,
                             color: textColor ?? Colors.white,
+                            weight: FontWeight.w200,
                           ),
                     ),
                     if (endIcon == null)
@@ -118,6 +119,7 @@ class FtButton extends StatelessWidget {
                           label ?? "",
                           size: textSize,
                           color: textColor ?? Colors.white,
+                          weight: FontWeight.w200,
                         ),
                     if (endIcon == null)
                       Container()

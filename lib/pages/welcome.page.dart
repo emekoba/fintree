@@ -22,6 +22,22 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           Positioned.fill(
+            bottom: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent, // Top color (transparent)
+                    Colors.transparent, // Top color (transparent)
+                    Colors.black.withOpacity(0.8), // Bottom color (darker)
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Positioned.fill(
             child: Column(
               children: [
                 const Expanded(
@@ -32,6 +48,7 @@ class WelcomePage extends StatelessWidget {
                     'Be happy with your finance',
                     size: 32,
                     center: true,
+                    weight: FontWeight.w200,
                   ).paddingSymmetric(horizontal: Get.width / 7),
                 ),
                 const Box(height: 40),
